@@ -34,7 +34,7 @@
             <h3 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
             <p>
                 <small class="text-body-secondary">
-                    By. <a class="text-decoration-none" href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                    By. <a class="text-decoration-none" href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }} <i class="bi bi-eye"></i> {{ $posts[0]->count }} views
                 </small>
             </p>
             <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -59,7 +59,7 @@
                         <h5 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
                         <p>
                             <small class="text-body-secondary">
-                                By. <a class="text-decoration-none" href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+                                By. <a class="text-decoration-none" href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }} <i class="bi bi-eye"></i> {{ $post->count }} views
                             </small>
                         </p>
                         <p class="card-text">{{ $post->excerpt }}</p>

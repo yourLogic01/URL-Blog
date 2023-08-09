@@ -31,6 +31,8 @@ class PostController extends Controller
     }
 
     public function show(Post $post) {
+        $postId = Post::find($post->id);
+        $postId->increment('count');
         return view('post', [
             "title" => "Single Posts",
             "active" => 'posts',

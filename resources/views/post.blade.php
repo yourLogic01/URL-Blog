@@ -8,7 +8,7 @@
             <div class="col-md-8">
                 <h2 class="mb-3">{{ $post->title }}</h2>
         
-                <p>By. <a class="text-decoration-none" href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+                <p>By. <a class="text-decoration-none" href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-decoration-none" href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a> <i class="bi bi-eye"></i> {{ $post->count }} views</p>
 
                 @if ($post->image)
                 <div style="max-height: 350px; overflow:hidden;">
