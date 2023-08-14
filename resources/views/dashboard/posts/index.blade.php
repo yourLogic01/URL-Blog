@@ -20,6 +20,7 @@
           <th scope="col">Title</th>
           <th scope="col">Category</th>
           <th scope="col">Action</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -39,6 +40,21 @@
                     <span data-feather="x-circle"></span>
                   </button>
                 </form>
+            </td>
+            <td>
+              @if ($post->is_publish)
+              <form method="POST" action="/dashboard/publish/{{ $post->slug }}" class="d-inline">
+                @csrf
+                @method('PATCH')
+                <button type="submit" class="badge bg-success text-decoration-none border-0" onclick="return confirm('Apakah anda yakin untuk mengubah postingan ini menjadi not publish?')"><span data-feather="check-square"></span> Published</button>
+              </form>
+              @else
+              <form method="POST" action="/dashboard/publish/{{ $post->slug }}" class="d-inline">
+                @csrf
+                @method('PATCH')
+                <button type="submit" class="badge bg-secondary text-decoration-none border-0" onclick="return confirm('Apakah anda yakin untuk publish postingan ini?')"><span data-feather="x-square"></span> Not Published</button>
+              </form>
+              @endif
             </td>
         </tr>
         @endforeach
