@@ -24,7 +24,7 @@ class PostController extends Controller
             "title" => "All Posts" . $title,
             "active" => 'posts',
             // "posts" => Post::all(),
-            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
+            "posts" => Post::where('is_publish', true)->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
             // "posts" => Post::latest()->get(),
     
         ]);

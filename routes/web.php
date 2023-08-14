@@ -8,7 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
-
+use App\Http\Controllers\UpdatePublishPostController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,3 +86,5 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+Route::patch('/dashboard/publish/{slug}', [UpdatePublishPostController::class, 'index'])->middleware('auth');
