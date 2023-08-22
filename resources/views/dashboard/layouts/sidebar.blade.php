@@ -27,6 +27,12 @@
           Post Categories
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('dashboard/publish*') ? 'active' : '' }}" href="/dashboard/publish">
+          <span data-feather="upload-cloud"></span>
+          Set Publish Post
+        </a>
+      </li>
     </ul>
     @endcan
     </div>

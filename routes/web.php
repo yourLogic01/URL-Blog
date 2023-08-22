@@ -87,4 +87,5 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
-Route::patch('/dashboard/publish/{slug}', [UpdatePublishPostController::class, 'index'])->middleware('auth');
+Route::patch('/dashboard/publish/{slug}', [UpdatePublishPostController::class, 'updatePublishPost'])->middleware('auth');
+Route::get('/dashboard/publish', [UpdatePublishPostController::class, 'index'])->middleware('auth');
